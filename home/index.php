@@ -43,7 +43,7 @@
       <div id="logo">
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a> -->
         <!-- Uncomment below if you prefer to use a text logo -->
-        <h1><a href="index.html">ovp</a></h1>
+        <h1><a href="index.php">ovp</a></h1>
       </div>
 
      

@@ -16,7 +16,7 @@ if(mysqli_num_rows($result)==1){
 else{
     echo '<script>
     alert("Invalid credentials");
-    window.location="../";
+    window.location="../partials/login.php";
     </script>';
 }
 
