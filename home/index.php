@@ -61,15 +61,17 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about">
+    <!-- <section id="about">
     <div class="section">
 		<div class="container">
-			<div class="row full-height justify-content-center">
+    <form action="" method="POST" enctype="multipart/form-data">
+    <div class="row full-height justify-content-center">
 				<div class="col-15 text-center align-self-center py-5">
 					<div class="section pb-6 pt-6 pt-sm-2 text-center">
 						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
 			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
 			          	<label for="reg-log"></label>
+                
 						<div class="card-3d-wrap mx-auto">
 							<div class="card-3d-wrapper">
 								<div class="card-front">
@@ -77,11 +79,11 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Log In</h4>
 											<div class="form-group">
-												<input type="email" name="useremail" class="form-style" placeholder="Your Email"  required="required" autocomplete="off">
+												<input type="email" name="useremail_log" class="form-style" placeholder="Your Email"  required="required" autocomplete="off">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" name="password" class="form-style" placeholder="Your Password" required="required" autocomplete="off">
+												<input type="password" name="password_log" class="form-style" placeholder="Your Password" required="required" autocomplete="off">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<a href="../partials/dashboard.php" class="btn mt-4">submit</a>
@@ -130,8 +132,38 @@
 	    </div>
 	</div>
 
+</form>
+			
 
-    </section><!-- End About Section -->
+    </section>End About Section -->
+    <section id="about">
+    <div class = "section" >
+    <div class="col align-items-md-stretch">
+      <div class="col-md-5">
+        <div class="h-100 p-5 text-white bg-dark rounded-3 ">
+          <h2>Login</h2>
+          <p>Login to cast your vote now !</p>
+          <a href="../partials/login.php">
+            <button class="btn btn-warning" type="button" >GO😊</button>
+          </a>
+        </div>
+      </div>
+      <br><br>
+      <div class="col-md-5">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Register</h2>
+          <p>Register in our OVP to cast your vote !</p>
+          <a href="../partials/registration.php">
+            <button class="btn btn-info" type="button">GO😉</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    </section>
+   
 
     
   <!-- ======= Footer ======= -->

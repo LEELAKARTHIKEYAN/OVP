@@ -40,6 +40,7 @@ h6 span{
   position: relative;
   width: 100%;
   display: block;
+  align-items: center;
 }
 .full-height{
   min-height: 100vh;

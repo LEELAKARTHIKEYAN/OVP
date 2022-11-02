@@ -16,20 +16,19 @@
     <div class="container text-center">
         <form action="../actions/register.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
-                <input type="text" class="form-control w-50 m-auto" placeholder="Enter your name" name="name"  required="required">
+                <input type="text" class="form-control w-50 m-auto" placeholder="Enter your name" name="username"  required="required" autocomplete="off">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 m-auto" pattern="[789][0-9]{9}" placeholder="Enter your mobile number" name="mobile_number" required="required">
+                <input type="email" class="form-control w-50 m-auto"  placeholder="Enter your mail ID" name="useremail" required="required" autocomplete="off">
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control w-50 m-auto" placeholder="Enter your password" name="password" required="required">
+                <input type="password" class="form-control w-50 m-auto" placeholder="Enter your password" name="password" required="required" autocomplete="off">
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control w-50 m-auto" placeholder="Confirm your password" name="cpassword" required="required">
+                <input type="password" class="form-control w-50 m-auto" placeholder="Confirm your password" name="cpassword" required="required" autocomplete="off">
             </div>
             <div class="mb-3">
-            <input type="file" class="hidden" id="voterimage" style="display:none;" accept="image/*">
-            <label class="input-group-text form-control w-50 m-auto" for="voterimage">Upload your image</label>
+            <input type="file" class="form-control w-50 m-auto" name="voterimage"  accept="image/*">
             </div>
             <button type="submit" class="btn btn-dark my-4">Register</button>
             <p>Already have an account ?

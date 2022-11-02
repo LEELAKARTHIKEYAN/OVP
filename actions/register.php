@@ -1,12 +1,11 @@
 <?php
 include('connect.php');
-$username=$_POST['name'];
-$mobile=$_POST['mobile_number'];
+$username=$_POST['username'];
+$useremail=$_POST['useremail'];
 $password=$_POST['password'];
 $cpassword=$_POST['cpassword'];
-$image=$_FILES['photo']['name'];
-$tmp_name=$_FILES['photo']['tmp_name'];
-$std=$_POST['std'];
+$image=$_FILES['voterimage']['name'];
+$tmp_name=$_FILES['voterimage']['tmp_name'];
 
 if($cpassword!=$password){
     echo '<script>
@@ -17,13 +16,13 @@ if($cpassword!=$password){
 
 else{
     move_uploaded_file($tmp_name,"../uploads/$image");
-    $sql="insert into `userdata` (username,mobile,password,photo,standard,status,votes) values('$username','$mobile','$password','$image','$std',0,0)";
+    $sql="insert into `userdata` (username,useremail,password,photo,status) values('$username','$useremail','$password','$image',0)";
 
     $result=mysqli_query($con,$sql);
     if($result){
         echo '<script>
     alert("Registration Successfull");
-    window.location="../";
+    window.location="../partials/login.php";
     </script>';
     }
 }

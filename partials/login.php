@@ -1,3 +1,6 @@
+< <?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,21 +18,21 @@
     <div class="py-4" style="background-color:#241433">
     <h2 class="text-center py-2 text-white">Login</h2>
     <div class="container text-center">
-        <form action="./actions/login.php" method="POST">
-            <div class="mb-3">
-                <input type="text" class="form-control w-50 m-auto" name="username" placeholder="Enter your Username" required="required" autocomplete="on"> 
+        <form action="../actions/login.php" method="POST">
+            <div class="mb-2">
+                <input type="email" class="form-control w-50 m-auto" name="useremail_log" placeholder="Enter your mail ID" required="required" autocomplete="off"> 
             </div>
-            <div class="mb-3">
-                <input type="text" class="form-control w-50 m-auto" name="mobile" placeholder="Enter your mobile number" required="required" autocomplete="on" maxLength="10" minLength="10"> 
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control w-50 m-auto" name="password" placeholder="Enter your password" required="required" autocomplete="off"> 
+            <div class="mb-2">
+                <input type="password" class="form-control w-50 m-auto" name="password_log" placeholder="Enter your password" required="required" autocomplete="off"> 
             </div>
             <button type="submit" class="btn btn-dark my-4">Login</button>
-            <p >Don't have an account ?
+            <p style="color:white;">Don't have an account ?
             <a href="../partials/registration.php" class="text-white">Register here</a>
             </p>
         </form>
     </div>
 </body>
 </html>
+<?php
+session_abort();
+?>
