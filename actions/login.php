@@ -8,7 +8,7 @@ $password=$_POST['password_log'];
 $sql = "Select * from `userdata` where useremail = '$useremail'  and password ='$password'";
 $result = mysqli_query($con,$sql);
 //if no of rows is greater than 0 then data is present in base
-if(mysqli_num_rows($result)>0){
+if(mysqli_num_rows($result)==1){
     echo '<script>
     window.location="../partials/dashboard.php";
     </script>';
