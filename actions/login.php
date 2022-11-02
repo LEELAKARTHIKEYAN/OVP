@@ -10,7 +10,7 @@ $result = mysqli_query($con,$sql);
 //if no of rows is greater than 0 then data is present in base
 if(mysqli_num_rows($result)==1){
     echo '<script>
-    window.location="../partials/dashboard.php";
+    window.location="../userDashboard/userdash.php";
     </script>';
 }
 else{

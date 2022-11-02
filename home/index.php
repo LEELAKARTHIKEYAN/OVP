@@ -139,8 +139,8 @@
     <section id="about">
     <div class = "section" >
     <div class="col align-items-md-stretch">
-      <div class="col-md-5">
-        <div class="h-100 p-5 text-white bg-dark rounded-3 ">
+      <div class="col-md-5" style="margin-left:27.5%;">
+        <div class="h-80 p-5 text-white bg-dark rounded-3 ">
           <h2>Login</h2>
           <p>Login to cast your vote now !</p>
           <a href="../partials/login.php">
@@ -149,8 +149,8 @@
         </div>
       </div>
       <br><br>
-      <div class="col-md-5">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
+      <div class="col-md-5" style="margin-left:27.5%;">
+        <div class="h-80 p-5 text-white bg-dark rounded-3">
           <h2>Register</h2>
           <p>Register in our OVP to cast your vote !</p>
           <a href="../partials/registration.php">

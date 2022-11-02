@@ -13,6 +13,9 @@ else{
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script language="javascript" type="text/javascript">
+        window.history.forward();
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,9 +97,7 @@ else{
             <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" alt="User image">
             <div class="card-body">
             <strong class="text-warning h6">Name : </strong>
-            <?php echo $data['username'];?><br>
-            <strong class="text-warning h6">Mobile : </strong>
-            <?php echo $data['mobile'];?><br>
+            <?php echo $data['username']?><br>
             <strong class="text-warning h6">Status : </strong>
             <?php echo $status?><br>
         </div>

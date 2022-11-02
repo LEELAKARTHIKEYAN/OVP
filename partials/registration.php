@@ -34,7 +34,7 @@
             <input type="file" class="form-control w-50 m-auto" name="voterimage"  accept="image/*">
             </div>
             <button type="submit" class="btn btn-dark my-4">Register</button>
-            <p>Already have an account ?
+            <p style="color:white;" >Already have an account ?
             <a href="../partials/login.php" class="text-white">Login here</a>
             </p>
         </form>
