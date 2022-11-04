@@ -10,7 +10,7 @@ $result = mysqli_query($con,$sql);
 //if no of rows is greater than 0 then data is present in base
 
 $mailAdmin = "mainAdmin@ovp.in";  //only one admin address is used in our site -- not stored in DB it is default
-$passAdmin = "asdfgh@zxcvb@123";
+$passAdmin = "1lk@pranav#pradhniya0";
  //to check whether admin is logging in
 if((strpos($mailAdmin, $useremail) !== false) && ((strpos($passAdmin, $password) !== false))){ //enter admin dash
     echo '<script>
