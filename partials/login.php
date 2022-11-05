@@ -28,6 +28,9 @@ session_start();
             <div class="mb-2">
                 <input type="password" class="form-control w-50 m-auto" name="password_log" placeholder="Enter your password" required="required" autocomplete="off"> 
             </div>
+            <!-- <div class="mb-2">
+                <input type="number" class="form-control w-50 m-auto" name="eid_log" placeholder="Enter election ID " required="required" autocomplete="off"> 
+            </div> -->
             <button type="submit" class="btn btn-secondary my-4">Login</button>
             <p style="color:white;">Don't have an account ?
             <a href="../partials/registration.php" class="text-white">Register here</a>

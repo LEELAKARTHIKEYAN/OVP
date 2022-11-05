@@ -2,17 +2,21 @@
 
 session_start();
 include('connect.php');
-$votes = $_POST['groupvotes'];
+$votes = $_POST['votes'];
 $totalvotes = $votes+1;
-$gid=$_POST['groupid'];
+$cid=$_POST['cid'];
 $uid=$_SESSION['id'];
 
-$updatevotes = mysqli_query($con,"update `userdata` set votes='$totalvotes' where id='$gid'");
+$updatevotes = mysqli_query($con,"update `candidate` set votes='$totalvotes' where cid='$cid'");
 
 $updatestatus = mysqli_query($con,"update `userdata` set status=1 where id='$uid'");
 
+$cgname=mysqli_query($con,"Select cname from `candidate` where cid='$cid'");
+$CName=mysqli_fetch_all($cgname,MYSQLI_ASSOC);
+$_SESSION['cname']=$CName;
+
 if($updatevotes and $updatestatus){
-    $getgroups = mysqli_query($con,"select username,photo,votes,id from `userdata` where standard='group'");
+    $getgroups = mysqli_query($con,"select * from `candidate`");
     $groups=mysqli_fetch_all($getgroups,MYSQLI_ASSOC);
     $_SESSION['groups'] = $groups;
     $_SESSION['status']=1;

@@ -47,18 +47,21 @@ else{
                 <!-- groups  -->
                     <div class="row" style="background-color:#7858A6;border-radius: 10px;border: 2px solid #73AD21;">
                         <div class="col-md-4">
-                            <img src="../uploads/<?php echo $groups[$i]['photo']?>" alt="Group image">
+                            <img src="../uploads/<?php echo $groups[$i]['c_image']?>" width="250px" height="200px" alt="Candidate image">
                         </div>
                         <div class="card col-md-8" style="background-color:#371B58;">
                         <div class="card-body">
-                        <strong class="text-warning h6" style="margin:0px">Group Name : </strong>
-                            <?php echo $groups[$i]['username']?><br>
-                            <strong class="text-warning h6" style="margin:0px">Votes : </strong>
-                            <?php echo $groups[$i]['votes']?><br>
+                        <strong class="text-warning h6" style="margin:0px">Election ID:</strong>
+                            <?php echo $groups[$i]['e_id']?><br>
+                        <strong class="text-warning h6" style="margin:0px">Candidate Name : </strong>
+                            <?php echo $groups[$i]['cname']?><br>
+                            <strong class="text-warning h6" style="margin:0px">Candidate Motto : </strong>
+                            <?php echo $groups[$i]['c_motto']?><br>
+                            
                         </div>
                         <form action="../actions/voting.php " method="POST">
-                        <input type="hidden" name="groupvotes" value="<?php echo $groups[$i]['votes']?>">
-                        <input type="hidden" name="groupid" value="<?php echo $groups[$i]['id']?>">
+                        <input type="hidden" name="votes" value="<?php echo $groups[$i]['votes']?>">
+                        <input type="hidden" name="cid" value="<?php echo $groups[$i]['cid']?>">
 
                         <?php
                         if($_SESSION['status'] ==1){
@@ -94,12 +97,27 @@ else{
     <div class="col-md-5">
         <!-- user profile -->
         <div class="card bg-dark" style="width: 20rem;margin-left:80px;">
-            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" alt="User image">
+            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" width="250px" height="300px" alt="User image">
             <div class="card-body">
             <strong class="text-warning h6">Name : </strong>
             <?php echo $data['username']?><br>
             <strong class="text-warning h6">Status : </strong>
             <?php echo $status?><br>
+            
+            <?php 
+            $zcan=$_SESSION['ccname'];
+            if(!(empty($zcan)))
+            {
+                echo '<strong class="text-warning h6">You VOTED FOR : $zcan</strong>';
+            }
+            else
+            {
+                echo '<strong class="text-warning h6">You VOTED for : ⨉ </strong>';
+            }
+            ?>
+
+        
+            <br>
         </div>
     </div>
     </div>
