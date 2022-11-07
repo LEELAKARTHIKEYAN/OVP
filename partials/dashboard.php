@@ -32,7 +32,7 @@ else{
 <nav class="navbar bg-dark">
 <div class="container-fluid my-2">
 <!-- <img src="../ovplogoreal.png"> -->
-<h1 class="text-center text-warning py-2">Dashboard</h1>
+<h1 class="text-center text-warning py-2">VOTING PAGE</h1>
 <a href="logout.php"><button class="btn btn-danger text-light px-3">Logout</button></a>
 </div>
 </nav>
@@ -83,15 +83,17 @@ else{
                     <?php
             }
             
-        }else{
+        }
+        else
+        {
             ?>
-            <div class="container">
-                <p>No groups to display</p>
-            </div>
-            <?php
+             
+            <h1><p>NO LIVE ELECTIONS</p></h1>;
+            
+               <?php
         }
 
-                    ?>
+        ?>
     
     </div>
     <div class="col-md-5">
@@ -105,14 +107,14 @@ else{
             <?php echo $status?><br>
             
             <?php 
-            $zcan=$_SESSION['ccname'];
-            if(!(empty($zcan)))
+            if(isset($_SESSION['candname']))
             {
-                echo '<strong class="text-warning h6">You VOTED FOR : $zcan</strong>';
+                echo '<strong class="text-warning h6">You VOTED FOR :</strong>';
+                echo $_SESSION['candname'];
             }
             else
             {
-                echo '<strong class="text-warning h6">You VOTED for : ⨉ </strong>';
+                echo '<strong class="text-warning h6">You VOTED for : (Yet to Vote) </strong>';
             }
             ?>
 
@@ -127,3 +129,4 @@ else{
 
 </body>
 </html>
+

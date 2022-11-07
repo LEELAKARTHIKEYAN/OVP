@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -55,93 +60,29 @@
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Welcome to Online Voting Portal</h1>
       <a href="#about" class="btn-get-started">Get Started</a>
+      <br><br>
+      <?php
+        if(isset($_SESSION['enamedisplay']))
+        {
+            echo "<b><h2 style='color:#A8E890;font-size:30px'>LIVE ELECTION: " .$_SESSION['enamedisplay']. "</h2></b>";
+        }
+        else
+        echo '<h3 class="text-danger" ><b>NO LIVE ELECTION</b></h3>';
+        ?>
     </div>
+
   </section><!-- End Hero Section -->
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <!-- <section id="about">
-    <div class="section">
-		<div class="container">
-    <form action="" method="POST" enctype="multipart/form-data">
-    <div class="row full-height justify-content-center">
-				<div class="col-15 text-center align-self-center py-5">
-					<div class="section pb-6 pt-6 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-			          	<label for="reg-log"></label>
-                
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="useremail_log" class="form-style" placeholder="Your Email"  required="required" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="password_log" class="form-style" placeholder="Your Password" required="required" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="../partials/dashboard.php" class="btn mt-4">submit</a>
-                        <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-				      					</div>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="pb-3" style="padding-Top:70px; margin:0">Sign Up</h4>
-											<div class="form-group">
-												<input type="text" name="username" class="form-style" placeholder="Your Full Name" required="required" autocomplete="off">
-												<i class="input-icon uil uil-user"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="email" name="useremail" class="form-style" placeholder="Your Email"  required="required" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="password" class="form-style" placeholder="Your Password" required="required" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-                      <div class="form-group mt-2">
-												<input type="password" name="cpassword" class="form-style" placeholder="Confirm Your Password" required="required" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-                      <div class="form-group mt-2">
-                      <input type="file" name="voterimage" id="voterimage" style="display:none;"  required="required" accept="image/*">
-                       <label class="input-group-text form-control w-40 m-auto" for="voterimage">Upload your image</label>
-											</div>
-                      <div class="form-group mt-2">
-											
-                      <button type="submit" class="btn my-2">
-                      <a href="../partials/dashboard.php">submit</a>
-                      </button>
-                      </div>
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
-
-</form>
-			
-
-    </section>End About Section -->
+    </section><!--End About Section -->
     <section id="about">
     <div class = "section" >
-    <div class="col align-items-md-stretch">
+    <div class="col align-items-md-stretch"></div>
       <div class="col-md-5" style="margin-left:27.5%;">
         <div class="h-80 p-5 text-white bg-dark rounded-3 ">
           <h2>Login</h2>
+
           <p>Login to cast your vote now !</p>
           <a href="../partials/login.php">
             <button class="btn btn-warning" type="button" >GO😊</button>
@@ -163,7 +104,52 @@
     </div>
 
     </section>
-   
+   <section id="about1" class="about1">
+        <br><br>
+      <div class="container">
+        <div class="row" style="margin-left:80px">
+          <div class="col-lg-4 col-md-6 d-flex align-items-center" data-aos="zoom-in">
+            <div class="member">
+              <img src="assets/img/pranav.PNG" alt="" height="250" width="250">
+              <br>
+              <center><h4 style="padding-top:20px;">Pranav C</h4></center>
+              <center><h5 style="padding-top:5px;">20BLC1074</h5></center>
+              <center><span>VIT Chennai</span></center>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+            <div class="member">
+              <img src="assets/img/LK.png" alt="" height="250" width="250">
+              <br>
+              <center><h4 style="padding-top:20px;">H.Leela Karthikeyan</h4></center>
+              <center><h5 style="padding-top:5px;">20BLC1097</h5></center>
+              <center><span>VIT Chennai</span></center>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+            <div class="member">
+              <img src="assets/img/pradyna.png" alt="" height="250" width="250">
+              <br>
+              <center><h4 style="padding-top:20px;">Pradnniya Shree</h4></center>
+              <center><h5 style="padding-top:5px;">20BLC1046</h5></center>
+              <center><span>VIT Chennai</span></center>
+              
+            </div>
+          </div>
+
+        </div>
+          <br><br><br>
+        <div class="section-title">
+          <center><h2>Meet The Team</h2></center>
+        </div>
+
+      </div>
+      <br><br><br>
+    </section>
+
 
     
   <!-- ======= Footer ======= -->
