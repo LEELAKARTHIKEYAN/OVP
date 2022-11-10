@@ -62,9 +62,14 @@ session_start();
       <a href="#about" class="btn-get-started">Get Started</a>
       <br><br>
       <?php
-        if((isset($_SESSION['enamedisplay'])) and (isset($_SESSION['e_stat'])))
+        if((isset($_SESSION['enamedisplay'])) and ($_SESSION['e_stat'])==1)
         {
             echo "<b><h2 style='color:#A8E890;font-size:30px'>LIVE ELECTION: " .$_SESSION['enamedisplay']. "</h2></b>";
+        }
+        elseif ((isset($_SESSION['enamedisplay'])) and ($_SESSION['e_stat'])==0) {
+          echo "<b><h2 style='color:red;font-size:30px'>ELECTION ENDED: " .$_SESSION['enamedisplay']. "</h2></b>";
+          echo '<h3 class="text-warning" ><b>RESULTS WILL BE RELEASED SOON</b></h3>';
+          //-----result button to page
         }
         else
         echo '<h3 class="text-danger" ><b>NO LIVE ELECTION</b></h3>';
