@@ -38,9 +38,18 @@ else{
         $_SESSION['id']=$data['id'];
         $_SESSION['data']=$data;
 
-        echo '<script>
+        if($_SESSION['status']==0)
+        {
+            echo '<script>
         window.location="../partials/dashboard.php";
         </script>';
+        }
+        else{
+            echo '<script>
+            alert("You have Already voted");
+            window.location="../partials/login.php";
+            </script>';
+        }
     }
     
     else{

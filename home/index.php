@@ -62,7 +62,7 @@ session_start();
       <a href="#about" class="btn-get-started">Get Started</a>
       <br><br>
       <?php
-        if(isset($_SESSION['enamedisplay']))
+        if((isset($_SESSION['enamedisplay'])) and (isset($_SESSION['e_stat'])))
         {
             echo "<b><h2 style='color:#A8E890;font-size:30px'>LIVE ELECTION: " .$_SESSION['enamedisplay']. "</h2></b>";
         }
@@ -84,9 +84,9 @@ session_start();
           <h2>Login</h2>
 
           <p>Login to cast your vote now !</p>
-          <a href="../partials/login.php">
-            <button class="btn btn-warning" type="button" >GO😊</button>
-          </a>
+         
+            <button class="btn btn-warning" type="button" onclick="window.location.href='../partials/login.php'" >GO😊</button>
+          
         </div>
       </div>
       <br><br>
@@ -94,9 +94,8 @@ session_start();
         <div class="h-80 p-5 text-white bg-dark rounded-3">
           <h2>Register</h2>
           <p>Register in our OVP to cast your vote !</p>
-          <a href="../partials/registration.php">
-            <button class="btn btn-info" type="button">GO😉</button>
-          </a>
+            <button class="btn btn-info" type="button" onclick="window.location.href='../partials/registration.php'">GO😉</button>
+        
         </div>
       </div>
     </div>
@@ -141,7 +140,7 @@ session_start();
           </div>
 
         </div>
-          <br><br><br>
+          <br>
         <div class="section-title">
           <center><h2>Meet The Team</h2></center>
         </div>
@@ -184,3 +183,7 @@ session_start();
 </body>
 
 </html>
+
+<?php
+// session_destroy();
+?>

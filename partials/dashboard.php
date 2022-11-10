@@ -31,8 +31,8 @@ else{
 <!-- navbar -->
 <nav class="navbar bg-dark">
 <div class="container-fluid my-2">
-<!-- <img src="../ovplogoreal.png"> -->
-<h1 class="text-center text-warning py-2">VOTING PAGE</h1>
+<img src="../ovplogoreal.png" width=90 height=80>
+<center><h3 class="text-warning py-2 text-center">VOTING PAGE</h3></center>
 <a href="logout.php"><button class="btn btn-danger text-light px-3">Logout</button></a>
 </div>
 </nav>
@@ -42,6 +42,7 @@ else{
         <?php
         if(isset($_SESSION['groups'])){
             $groups=$_SESSION['groups'];
+            if(count($groups)>0 and (isset($_SESSION['e_stat']))){
             for($i=0;$i<count($groups);$i++){
         ?>
                 <!-- groups  -->
@@ -51,10 +52,11 @@ else{
                         </div>
                         <div class="card col-md-8" style="background-color:#371B58;">
                         <div class="card-body">
-                        <strong class="text-warning h6" style="margin:0px">Election ID:</strong>
-                            <?php echo $groups[$i]['e_id']?><br>
+                        
                         <strong class="text-warning h6" style="margin:0px">Candidate Name : </strong>
                             <?php echo $groups[$i]['cname']?><br>
+                            <strong class="text-warning h6" style="margin:0px">Age:</strong>
+                            <?php echo $groups[$i]['c_age']?><br>
                             <strong class="text-warning h6" style="margin:0px">Candidate Motto : </strong>
                             <?php echo $groups[$i]['c_motto']?><br>
                             
@@ -82,24 +84,29 @@ else{
                     <br><br>
                     <?php
             }
-            
         }
         else
         {
             ?>
              
-            <h1><p>NO LIVE ELECTIONS</p></h1>;
+            <center><h1 style="color:#E0144C;"><p>NO LIVE ELECTIONS</p></h1></center>
             
                <?php
         }
+    }
+        
 
         ?>
+            
+        
+    
+        
     
     </div>
     <div class="col-md-5">
         <!-- user profile -->
-        <div class="card bg-dark" style="width: 20rem;margin-left:80px;">
-            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" width="250px" height="300px" alt="User image">
+        <div class="card bg-dark" style="width: 20rem;margin-left:220px;">
+            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" width="200" height="250" alt="User image">
             <div class="card-body">
             <strong class="text-warning h6">Name : </strong>
             <?php echo $data['username']?><br>
@@ -107,15 +114,15 @@ else{
             <?php echo $status?><br>
             
             <?php 
-            if(isset($_SESSION['candname']))
-            {
-                echo '<strong class="text-warning h6">You VOTED FOR :</strong>';
-                echo $_SESSION['candname'];
-            }
-            else
-            {
-                echo '<strong class="text-warning h6">You VOTED for : (Yet to Vote) </strong>';
-            }
+            // if(isset($_SESSION['candname']))
+            // {
+            //     echo '<strong class="text-warning h6">You VOTED FOR :</strong>';
+            //     echo $_SESSION['candname'];
+            // }
+            // else
+            // {
+            //     echo '<strong class="text-warning h6">You VOTED for : (Yet to Vote) </strong>';
+            // }
             ?>
 
         

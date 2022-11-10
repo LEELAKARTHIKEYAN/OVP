@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","demo123","votingsystem");
+$con=mysqli_connect("localhost","root","demo123","onlinevotingsystem");
 // if we give some other root password it will show database error
 
 //we show error only if DB is not connected properly
