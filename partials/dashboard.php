@@ -42,7 +42,7 @@ else{
         <?php
         if(isset($_SESSION['groups'])){
             $groups=$_SESSION['groups'];
-            if(count($groups)>0 and (isset($_SESSION['e_stat']))){
+            if(count($groups)>0 or (isset($_SESSION['e_stat']))){
             for($i=0;$i<count($groups);$i++){
         ?>
                 <!-- groups  -->
@@ -94,6 +94,14 @@ else{
                <?php
         }
     }
+    else
+        {
+            ?>
+             
+            <center><h1 style="color:#E0144C;"><p>NO LIVE</p></h1></center>
+            
+               <?php
+        }
         
 
         ?>

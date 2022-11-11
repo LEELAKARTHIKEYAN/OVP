@@ -38,15 +38,21 @@ else{
         $_SESSION['id']=$data['id'];
         $_SESSION['data']=$data;
 
-        if($_SESSION['status']==0)
+        if($_SESSION['status']==0 and ($_SESSION['e_stat'])==1 )
         {
             echo '<script>
         window.location="../partials/dashboard.php";
         </script>';
         }
+        elseif ($_SESSION['status']==1 and ($_SESSION['e_stat'])==1 ) {
+            echo '<script>
+            alert("YOU HAVE ALREADY VOTED !");
+            window.location="../partials/login.php";
+            </script>';
+        }
         else{
             echo '<script>
-            alert("You have Already voted");
+            alert("Note:Voting Page is not available\nNO LIVE ELECTIONS");
             window.location="../partials/login.php";
             </script>';
         }
@@ -60,21 +66,4 @@ else{
     }
 }
 
-
-
-//to use in dashboard
-// $data=mysqli_fetch_array($result);
-// $_SESSION['id']=$data['id'];
-// $_SESSION['status']=$data['status'];
-// $_SESSION['data']=$data;
-// echo '<script>
-//     window.location="../partials/dashboard.php";
-//     </script>';
-// }
-// else{
-//     echo '<script>
-//     alert("Invalid credentials");
-//     window.location="../";
-//     </script>';
-// }
 ?>
