@@ -48,7 +48,7 @@ else{
                 <!-- groups  -->
                     <div class="row" style="background-color:#7858A6;border-radius: 10px;border: 2px solid #73AD21;">
                         <div class="col-md-4">
-                            <img src="../uploads/<?php echo $groups[$i]['c_image']?>" width="250px" height="200px" alt="Candidate image">
+                            <center><img src="../uploads/<?php echo $groups[$i]['c_image']?>" width="250px" height="200px" alt="Candidate image"> </center>
                         </div>
                         <div class="card col-md-8" style="background-color:#371B58;">
                         <div class="card-body">
