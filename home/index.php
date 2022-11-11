@@ -69,7 +69,13 @@ session_start();
         elseif ((isset($_SESSION['enamedisplay'])) and ($_SESSION['e_stat'])==0) {
           echo "<b><h2 style='color:red;font-size:30px'>ELECTION ENDED: " .$_SESSION['enamedisplay']. "</h2></b>";
           echo '<h3 class="text-warning" ><b>RESULTS WILL BE RELEASED SOON</b></h3>';
-          //-----result button to page
+          // if( $_SESSION['result_stats']){
+          //   // echo '<a href="../results/results.php"</a>';
+          // }
+          // else{
+          //   echo '<h3 class="text-warning" ><b>RESULTS WILL BE RELEASED SOON</b></h3>';
+          // }
+
         }
         else
         echo '<h3 class="text-danger" ><b>NO LIVE ELECTION</b></h3>';

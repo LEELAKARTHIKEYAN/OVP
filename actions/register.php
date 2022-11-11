@@ -34,7 +34,7 @@ else{
 		}
 else{
 
-    $sql="insert into `userdata` (username,useremail,password,photo,status) values('$username','$useremail','$password','$image',0)";
+    $sql="insert into `userdata` (username,useremail,password,photo,status,votedFor) values('$username','$useremail','$password','$image',0,'')";
 
         $result=mysqli_query($con,$sql);
         if($result){

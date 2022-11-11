@@ -17,10 +17,11 @@ $updatestatus = mysqli_query($con,"update `userdata` set status=1 where id='$uid
 if($updatevotes and $updatestatus){
     $getgroups = mysqli_query($con,"select * from `candidate`");
     $cgname=mysqli_query($con,"SELECT cname from `candidate` where cid=$cid");
+    $row = mysqli_fetch_array($cgname)[0];
     $groups=mysqli_fetch_all($getgroups,MYSQLI_ASSOC);
     $_SESSION['groups'] = $groups;
     $_SESSION['status']=1;
-    $_SESSION['candname']=$cgname;
+    $_SESSION['candname']=$row;
     echo '<script> alert("VOTING SUCCESSFUL");
     window.location="../partials/dashboard.php"</script>';
     

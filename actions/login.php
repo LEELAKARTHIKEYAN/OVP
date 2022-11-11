@@ -33,6 +33,7 @@ else{
 
         $data = mysqli_fetch_array($result);
         $_SESSION['username']=$data['username'];
+        $_SESSION['useremail']=$data['useremail'];
         $_SESSION['status']=$data['status'];
         $_SESSION['photo']=$data['photo'];
         $_SESSION['id']=$data['id'];

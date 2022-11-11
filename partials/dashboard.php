@@ -1,5 +1,5 @@
 <?php
-
+include("../actions/connect.php");
 session_start();
 $data=$_SESSION['data'];
 if($_SESSION['status']==1){
@@ -122,15 +122,18 @@ else{
             <?php echo $status?><br>
             
             <?php 
-            // if(isset($_SESSION['candname']))
-            // {
-            //     echo '<strong class="text-warning h6">You VOTED FOR :</strong>';
-            //     echo $_SESSION['candname'];
-            // }
-            // else
-            // {
-            //     echo '<strong class="text-warning h6">You VOTED for : (Yet to Vote) </strong>';
-            // }
+            if(isset($_SESSION['candname']))
+            {
+                $cn=$_SESSION['candname'];
+                $uem=$data['useremail'];
+                $upvf=mysqli_query($con,"UPDATE `userdata` set votedFor='$cn' where useremail='$uem'");
+                echo '<strong class="text-warning h6">You VOTED FOR : </strong>';
+                echo $cn;
+            }
+            else
+            {
+                echo '<strong class="text-warning h6">You VOTED for : (Yet to Vote) </strong>';
+            }
             ?>
 
         
@@ -144,4 +147,3 @@ else{
 
 </body>
 </html>
-
