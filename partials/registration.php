@@ -30,9 +30,16 @@
             <div class="mb-3">
                 <input type="password" class="form-control w-50 m-auto" placeholder="Confirm your password" name="cpassword" required="required" autocomplete="off">
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
             <input type="file" class="form-control w-50 m-auto" name="voterimage"  accept="image/*">
-            </div>
+            </div> -->
+            <div class="mb-3 fileUpload btn btn-light">
+            <label class="upload">
+            <input name='voterimage' type="file" accept="image/*" required="required"/>
+                Upload Your Image
+                 </label>
+             </div>
+             <br>
             <button type="submit" class="btn btn-dark my-4">Register</button>
             <p style="color:white;" >Already have an account ?
             <a href="../partials/login.php" class="text-white">Login here</a>

@@ -23,12 +23,32 @@ if(isset($_SESSION['enamedisplay']))
     echo "<b><h2 style='color:#497174;font-size:30px;padding:40px;margin-left:280px;'>ELECTION RESULTS: " .$_SESSION['enamedisplay']. "</h2></b>";
 }
 ?>
-<div class="row my-4 px-4" style="margin:0px;">
+
+<?php
+        if(isset($_SESSION['res_grp'])){
+            $groups=$_SESSION['res_grp'];
+
+            if($groups[0]['votes']==$groups[1]['votes'])
+            {
+                echo "<center><b><h2 style='color:#3B3486;font-size:30px;padding:20px;margin-left:80px;'>" .$groups[0]['partyName']. " and ".$groups[1]['partyName']." in coalition</h2></b></center>";
+                echo "<b><h2 style='color:#CD104D;font-size:30px;padding:10px;margin-left:80px;'>" .$groups[0]['cname']. " and ".$groups[1]['cname']." tied in the Election</h2></b>";
+                // $fp=mysqli_query($con,"UPDATE `elections` set firstPlace='$groups[0]['cname']'");
+                // $sp=mysqli_query($con,"UPDATE `elections` set secondPlace='$groups[1]['cname']' ");
+                // $tp=mysqli_query($con,"UPDATE `elections` set thirdPlace='$groups[2]['cname']' ");
+                
+            }
+            else
+            {
+                echo "<b><h2 style='color:#CD104D;font-size:30px;padding:40px;margin-left:80px;'>" .$groups[0]['cname']. " Wins the Election</h2></b>";
+
+            }
+        }
+        ?>
+<div class="row my-4 px-4" style="margin:0px;">s
     <div class="col-md-7">
         <?php
         if(isset($_SESSION['res_grp'])){
             $groups=$_SESSION['res_grp'];
-            echo "<b><h2 style='color:#CD104D;font-size:30px;padding:40px;margin-left:80px;'>" .$groups[0]['cname']. " Wins the Election</h2></b>";
             for($i=0;$i<count($groups);$i++){
         ?>
                 <!-- groups  -->

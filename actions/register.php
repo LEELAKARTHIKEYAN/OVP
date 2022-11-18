@@ -16,7 +16,6 @@ if($cpassword!=$password){
 
 else{
 
-
     $sqll="select * from `userdata` where (useremail='$useremail')";
 
       $res=mysqli_query($con,$sqll);
