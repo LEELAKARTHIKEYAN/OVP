@@ -1,7 +1,8 @@
 <?php
 session_start();
 include("../actions/connect.php");
-$vot_res=mysqli_query($con,"SELECT * from `candidate` order by votes desc");
+$eid = $_SESSION['electionID'];
+$vot_res=mysqli_query($con,"SELECT * from `candidate` where e_id=$eid order by votes desc");
 $res_grp=mysqli_fetch_all($vot_res,MYSQLI_ASSOC);
 $_SESSION['res_grp'] = $res_grp;
 ?>
@@ -25,6 +26,7 @@ if(isset($_SESSION['enamedisplay']))
 ?>
 
 <?php
+    $eid = $_SESSION['electionID'];
         if(isset($_SESSION['res_grp'])){
             $groups=$_SESSION['res_grp'];
 
@@ -32,9 +34,7 @@ if(isset($_SESSION['enamedisplay']))
             {
                 echo "<center><b><h2 style='color:#3B3486;font-size:30px;padding:20px;margin-left:80px;'>" .$groups[0]['partyName']. " and ".$groups[1]['partyName']." in coalition</h2></b></center>";
                 echo "<b><h2 style='color:#CD104D;font-size:30px;padding:10px;margin-left:80px;'>" .$groups[0]['cname']. " and ".$groups[1]['cname']." tied in the Election</h2></b>";
-                // $fp=mysqli_query($con,"UPDATE `elections` set firstPlace='$groups[0]['cname']'");
-                // $sp=mysqli_query($con,"UPDATE `elections` set secondPlace='$groups[1]['cname']' ");
-                // $tp=mysqli_query($con,"UPDATE `elections` set thirdPlace='$groups[2]['cname']' ");
+                
                 
             }
             else
@@ -42,6 +42,13 @@ if(isset($_SESSION['enamedisplay']))
                 echo "<b><h2 style='color:#CD104D;font-size:30px;padding:40px;margin-left:80px;'>" .$groups[0]['cname']. " Wins the Election</h2></b>";
 
             }
+            $a=$groups[0]['cname'];
+            $b=$groups[1]['cname'];
+            $c=$groups[2]['cname'];
+
+                $fp=mysqli_query($con,"UPDATE `elections` set firstPlace='$a' where e_id=$eid");
+                $sp=mysqli_query($con,"UPDATE `elections` set secondPlace='$b' where e_id=$eid ");
+                $tp=mysqli_query($con,"UPDATE `elections` set thirdPlace='$c' where e_id=$eid");
         }
         ?>
 <div class="row my-4 px-4" style="margin:0px;">s

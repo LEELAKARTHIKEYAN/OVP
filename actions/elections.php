@@ -4,6 +4,7 @@ include('connect.php');
 $eid=$_POST['eid'];
 $e_name=$_POST['e_name'];
 $_SESSION['enamedisplay'] =$e_name;
+$_SESSION['el_id']=$eid;
 
 $electionupdate ="insert into `elections` (e_id,e_name,no_of_cand,firstPlace,secondPlace,thirdPlace) values($eid,'$e_name',0,'-','-','-')";
 $result=mysqli_query($con,$electionupdate);

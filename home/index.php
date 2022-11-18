@@ -84,6 +84,7 @@ session_start();
         if((isset($_SESSION['enamedisplay'])) and ($_SESSION['e_stat'])==1)
         {
             echo "<b><h2 style='color:#A8E890;font-size:30px'>LIVE ELECTION: " .$_SESSION['enamedisplay']. "</h2></b>";
+            echo "<b><h2 style='color:#A8E890;font-size:20px'>Ends at 5.30PM Today</h2></b>";
         }
         elseif ((isset($_SESSION['enamedisplay'])) and ($_SESSION['e_stat'])==0) {
           echo "<b><h2 style='color:red;font-size:30px'>ELECTION ENDED: " .$_SESSION['enamedisplay']. "</h2></b>";
@@ -171,10 +172,9 @@ session_start();
           <br>
         <div class="section-title">
           <center><h2>Meet The Team</h2></center>
-        </div>
-
+          <center><h4>Contact us for hosting elections and queries</h4></center>
       </div>
-      <br>
+      </div>
     </section>
 
 

@@ -48,7 +48,7 @@ else{
                 <!-- groups  -->
                     <div class="row" style="background-color:#7858A6;border-radius: 10px;border: 2px solid #73AD21;">
                         <div class="col-md-4">
-                            <center><img src="../uploads/<?php echo $groups[$i]['c_image']?>" width="250px" height="200px" alt="Candidate image"> </center>
+                            <center><img src="../uploads/<?php echo $groups[$i]['c_image']?>" width="200px" height="220px" alt="Candidate image"> </center>
                         </div>
                         <div class="card col-md-8" style="background-color:#371B58;">
                         <div class="card-body">
@@ -98,7 +98,7 @@ else{
         {
             ?>
              
-            <center><h1 style="color:#E0144C;"><p>NO LIVE</p></h1></center>
+            <center><h1 style="color:#E0144C;"><p>NO LIVE ELECTIONS</p></h1></center>
             
                <?php
         }
@@ -113,8 +113,8 @@ else{
     </div>
     <div class="col-md-5">
         <!-- user profile -->
-        <div class="card bg-dark" style="width: 20rem;margin-left:220px;">
-            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" width="200" height="250" alt="User image">
+        <div class="card bg-dark" style="width: 17rem;margin-left:220px;">
+            <img src="../uploads/<?php echo $data['photo']?>" class="card-img-top" width="150" height="220" alt="User image">
             <div class="card-body">
             <strong class="text-warning h6">Name : </strong>
             <?php echo $data['username']?><br>
@@ -122,7 +122,7 @@ else{
             <?php echo $status?><br>
             
             <?php 
-            if(isset($_SESSION['candname']))
+            if(isset($_SESSION['candname']) and ($_SESSION['status']==1))
             {
                 $cn=$_SESSION['candname'];
                 $uem=$data['useremail'];
@@ -147,3 +147,7 @@ else{
 
 </body>
 </html>
+
+<?php
+// session_destroy();
+?>

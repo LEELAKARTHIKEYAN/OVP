@@ -6,20 +6,17 @@ $votes = $_POST['votes'];
 $totalvotes = $votes+1;
 $cid=$_POST['cid'];
 $uid=$_SESSION['id'];
-
+$eid=$_SESSION['electionID'];
 $updatevotes = mysqli_query($con,"update `candidate` set votes='$totalvotes' where cid=$cid");
 
 $updatestatus = mysqli_query($con,"update `userdata` set status=1 where id='$uid'");
 
-
-
-
 if($updatevotes and $updatestatus){
-    $getgroups = mysqli_query($con,"select * from `candidate`");
+    // $getgroups = mysqli_query($con,"SELECT * from `candidate` where e_id=$eid");
     $cgname=mysqli_query($con,"SELECT cname from `candidate` where cid=$cid");
     $row = mysqli_fetch_array($cgname)[0];
-    $groups=mysqli_fetch_all($getgroups,MYSQLI_ASSOC);
-    $_SESSION['groups'] = $groups;
+    // $groups=mysqli_fetch_all($getgroups,MYSQLI_ASSOC);
+    // $_SESSION['groups'] = $groups;
     $_SESSION['status']=1;
     $_SESSION['candname']=$row;
     echo '<script> alert("VOTING SUCCESSFUL");
