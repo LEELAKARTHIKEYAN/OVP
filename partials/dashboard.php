@@ -59,6 +59,8 @@ else{
                             <?php echo $groups[$i]['c_age']?><br>
                             <strong class="text-warning h6" style="margin:0px">Candidate Motto : </strong>
                             <?php echo $groups[$i]['c_motto']?><br>
+                            <strong class="text-warning h6" style="margin:0px">Party : </strong>
+                            <?php echo $groups[$i]['partyName']?><br>
                             
                         </div>
                         <form action="../actions/voting.php " method="POST">

@@ -51,7 +51,7 @@ if(isset($_SESSION['enamedisplay']))
                 $tp=mysqli_query($con,"UPDATE `elections` set thirdPlace='$c' where e_id=$eid");
         }
         ?>
-<div class="row my-4 px-4" style="margin:0px;">s
+<div class="row my-4 px-4" style="margin:0px;">
     <div class="col-md-7">
         <?php
         if(isset($_SESSION['res_grp'])){
